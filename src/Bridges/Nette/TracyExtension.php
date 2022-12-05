@@ -128,7 +128,7 @@ class TracyExtension extends Nette\DI\CompilerExtension
 		if ($this->debugMode) {
 			foreach ($this->config->bar as $item) {
 				if (is_string($item) && substr($item, 0, 1) === '@') {
-					$item = new Nette\DI\Statement(['@' . $builder::THIS_CONTAINER, 'getService'], [substr($item, 1)]);
+					$item = new Nette\DI\Statement(['@' . $builder::ThisContainer, 'getService'], [substr($item, 1)]);
 				} elseif (is_string($item)) {
 					$item = new Nette\DI\Statement($item);
 				}
